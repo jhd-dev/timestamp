@@ -1,0 +1,22 @@
+{
+  "name": "timestamp",
+  "version": "1.0.0",
+  "description": "a json-returning timestamp microservice",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/porygonj/timestamp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/porygonj/timestamp/issues"
+  },
+  "homepage": "https://github.com/porygonj/timestamp#readme",
+  "dependencies": {
+    "express": "^4.14.0"
+  }
+}
