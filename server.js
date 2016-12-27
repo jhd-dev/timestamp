@@ -4,16 +4,17 @@ var path = require("path");
 var app = express();
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-app.use('/', express.static(path.join(__dirname, 'static/index.html')));
+app.use(express.static(path.join(__dirname, 'static/index.html')));
 
 app.get('/:time', function(req, res){
     var time = req.params.time;
     var parts = time.replace(',', '').split(' ');
+    var date;
     if (parts.length > 1){
-        time = parts[2] + '-' + (months.indexOf(parts[0]) + 1) + '-' + parts[1];
+        date = new Date(parts[2] + '-' + (months.indexOf(parts[0]) + 1) + '-' + parts[1]);
+    }else{
+        date = new Date(parseInt(time, 10) * 1000);
     }
-    var date = new Date(time);
-    
     console.log(time, date.getTime(), typeof date.getTime());
     res.writeHead(200, {
         "Content-Type": "application/json"
@@ -25,7 +26,7 @@ app.get('/:time', function(req, res){
         }));
     }else{
         res.end(JSON.stringify({
-            "unix": date.getTime(),
+            "unix": date.getTime() / 1000,
             "natural": months[date.getMonth()] + ' ' + date.getDate() + ', ' + date.getFullYear()
         }));
     }
