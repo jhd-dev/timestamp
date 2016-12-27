@@ -32,6 +32,6 @@ app.get('/:time', function(req, res){
     }
 });
 
-http.createServer(app).listen(8080, function(){
+http.createServer(app).listen(process.env.PORT || 8080, function(){
   console.log('App listening on port 8080!');
 });
