@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "a json-returning timestamp microservice",
   "main": "server.js",
+  "start": "node server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "node test.js"
   },
   "repository": {
