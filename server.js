@@ -4,7 +4,7 @@ var path = require("path");
 var app = express();
 var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
-//app.use('/', express.static(path.join(__dirname, 'static/index.html')));
+app.use('/', express.static(path.join(__dirname, 'static/index.html')));
 
 app.get('/:time', function(req, res){
     var time = req.params.time;
