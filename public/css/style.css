@@ -1,5 +1,17 @@
 body {
     font-family: sans-serif;
+    background-color: #eee;
+}
+
+code {
+    padding: 2px;
+    border-radius: 1px;
+    background-color: #edd;
+    color: #d11;
+}
+
+a {
+    color: inherit;
 }
 
 footer {
